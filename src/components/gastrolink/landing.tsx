@@ -82,7 +82,7 @@ export function Landing({ onAuth }: { onAuth: (role: ProfileType) => void }) {
                     <span className="block text-sm font-semibold">{account.name}</span>
                     <span className="block text-xs text-muted">{account.detail}</span>
                   </span>
-                  <span className="text-xs font-semibold text-primary">{pending === account.userId ? "Entrando\u2026" : "Entrar"}</span>
+                  <span className="text-xs font-semibold text-primary">{pending === account.userId ? "Entrando…" : "Entrar"}</span>
                 </button>
               ))}
             </div>
