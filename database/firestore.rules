@@ -1,0 +1,58 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function signedIn() {
+      return request.auth != null;
+    }
+
+    function isOwner(userId) {
+      return signedIn() && request.auth.uid == userId;
+    }
+
+    function isAdmin() {
+      return signedIn()
+        && get(/databases/$(database)/documents/usuarios/$(request.auth.uid)).data.tipoPerfil == "ADMIN";
+    }
+
+    match /usuarios/{id} {
+      allow read: if signedIn();
+      allow create: if isOwner(id);
+      allow update: if isOwner(id) || isAdmin();
+      allow delete: if isAdmin();
+    }
+
+    match /restaurantes/{id} {
+      allow read: if signedIn();
+      allow create: if signedIn() && request.resource.data.usuarioId == request.auth.uid;
+      allow update: if signedIn() && (resource.data.usuarioId == request.auth.uid || isAdmin());
+      allow delete: if isAdmin();
+    }
+
+    match /influenciadores/{id} {
+      allow read: if signedIn();
+      allow create: if signedIn() && request.resource.data.usuarioId == request.auth.uid;
+      allow update: if signedIn() && (resource.data.usuarioId == request.auth.uid || isAdmin());
+      allow delete: if isAdmin();
+    }
+
+    match /ofertas/{id} {
+      allow read: if signedIn();
+      allow create: if signedIn();
+      allow update: if signedIn();
+      allow delete: if signedIn();
+    }
+
+    match /interesses_whatsapp/{id} {
+      allow read: if signedIn();
+      allow create: if signedIn();
+      allow update, delete: if isAdmin();
+    }
+
+    match /moderacao_denuncias/{id} {
+      allow read: if signedIn();
+      allow create: if signedIn();
+      allow update: if isAdmin();
+      allow delete: if isAdmin();
+    }
+  }
+}

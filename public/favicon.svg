@@ -1,1 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><rect width="32" height="32" rx="8" fill="#EA580C"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="GastroLink">
+  <rect width="32" height="32" rx="8" fill="#EA580C"/>
+  <circle cx="16" cy="17" r="8.25" fill="#FFFBF7"/>
+  <path d="M9.2 16.2c1.6-3.4 4-5.2 6.8-5.2s5.2 1.8 6.8 5.2" fill="none" stroke="#DC2626" stroke-width="1.7" stroke-linecap="round"/>
+  <path d="M12.4 16.4h7.2" fill="none" stroke="#2A1810" stroke-width="1.35" stroke-linecap="round"/>
+  <circle cx="22.4" cy="9.2" r="2.15" fill="#16A34A"/>
+</svg>
