@@ -114,8 +114,8 @@ export async function runSignOut({
   if (outcome !== "ok") {
     throw new Error(
       outcome === "timeout"
-        ? "Sign-out timed out \u2014 you are still signed in. Please try again."
-        : "Sign-out failed \u2014 you are still signed in. Please try again.",
+        ? "Sign-out timed out — you are still signed in. Please try again."
+        : "Sign-out failed — you are still signed in. Please try again.",
     );
   }
   clearToken();
@@ -135,7 +135,7 @@ export async function runSignOut({
  * Drop any prior session before a new sign-in starts, so switching providers
  * actually switches identity.
  *
- * Deliberately BEST EFFORT \u2014 unlike `runSignOut` this never throws. It also
+ * Deliberately BEST EFFORT — unlike `runSignOut` this never throws. It also
  * runs when there is no prior session at all, so treating a failure as fatal
  * would block first-time sign-in on a transport hiccup, for a visitor with no
  * session to protect. The subsequent OAuth flow issues a fresh session either

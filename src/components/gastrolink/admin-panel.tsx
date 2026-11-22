@@ -63,7 +63,7 @@ export function AdminPanel() {
                   </div>
                   <h3 className="mt-2 text-xl">{offer?.title ?? "Oferta removida"}</h3>
                   <p className="mt-1 text-sm text-muted">
-                    {offer?.restaurantName} · {offer ? formatPhone(offer.whatsappNumber) : ""} · mín. {offer ? formatFollowers(offer.minFollowers) : "\u2014"}
+                    {offer?.restaurantName} · {offer ? formatPhone(offer.whatsappNumber) : ""} · mín. {offer ? formatFollowers(offer.minFollowers) : "—"}
                   </p>
                   <p className="mt-3 text-sm">
                     <span className="font-semibold">Oferece: </span>
