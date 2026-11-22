@@ -1,122 +1,72 @@
-# 🍽️ GastroLink
+# GastroLink
 
-> Plataforma web que conecta **restaurantes** e **influenciadores** para parcerias de marketing gastronômico.
+Mural de oportunidades que conecta micro e pequenos restaurantes a nano e microinfluenciadores gastronômicos. O match do MVP não acontece dentro de um chat: o criador confirma o interesse e o app abre o WhatsApp do estabelecimento com a mensagem já escrita (`https://wa.me/{telefone}?text={mensagem}`).
 
-Desenvolvido como Projeto Integrador (2ª Entrega) — SENAC EAD TADS/TSI
+Projeto Integrador — ADS, Centro Universitário Senac. Grupo 17.
 
----
-
-## 📋 Sobre o Projeto
-
-GastroLink é um sistema web funcional que permite:
-
-- **Restaurantes** buscarem e selecionarem influenciadores para parcerias
-- **Influenciadores** descobrirem restaurantes e solicitarem colaborações
-- Gerenciamento do fluxo completo: solicitação → proposta → acordo
-
-## 🗺️ Funcionalidades Implementadas
-
-Baseado no mapa mental do projeto:
-
-| Módulo | Funcionalidades |
-|---|---|
-| **Login** | Seleção de tipo (restaurante/influencer), cadastro, login |
-| **Pesquisa Restaurante** | Home com cards de influencers, navbar com searchbox, sidebar com filtragem, ícone de perfil |
-| **Pesquisa Influenciador** | Catálogo de restaurantes com foto e bio |
-| **Parceria (Restaurante)** | Notificação, acesso ao formulário, decide aceitar ou não |
-| **Parceria (Influenciador)** | Escolhe restaurante, botão solicitar, formulário com contato, proposta + faixa de preço |
-| **Acordo** | Notificação pro influencer, entrar em contato para marcar parceria, resposta de ambos |
-
-## 🚀 Como Executar
-
-### Opção 1 — Direto no navegador (mais simples)
-```
-Abra o arquivo index.html no seu navegador
-```
-
-### Opção 2 — Com servidor local
-```bash
-# Python 3
-python -m http.server 8000
-
-# Node.js (npx)
-npx serve .
-```
-Depois acesse: `http://localhost:8000`
-
-## 📁 Estrutura do Projeto
-
-```
-gastrolink/
-│
-└── index.html        # Aplicação completa (HTML + CSS + JS em um arquivo)
-│
-└── README.md         # Este arquivo
-```
-
-> O projeto é uma SPA (Single Page Application) em um único arquivo HTML, facilitando a entrega e demonstração.
-
-## 🧭 Fluxo de Uso
-
-### Como Restaurante:
-1. Acesse a landing page → clique em "Sou Restaurante"
-2. Faça login ou cadastro
-3. Navegue pelos cards de influenciadores
-4. Use a busca e filtros para encontrar o perfil ideal
-5. Clique em "Solicitar parceria" e preencha o formulário
-6. Acompanhe em Notificações o status das suas propostas
-
-### Como Influenciador:
-1. Acesse a landing page → clique em "Sou Influenciador"
-2. Faça login ou cadastro
-3. Navegue pelo catálogo de restaurantes
-4. Solicite parceria com o restaurante desejado
-5. Receba propostas e responda em Notificações
-
-## 🛠️ Tecnologias
-
-- HTML5 semântico
-- CSS3 (variáveis CSS, Grid, Flexbox, animações)
-- JavaScript vanilla (sem frameworks, sem dependências)
-- Google Fonts (Playfair Display + DM Sans)
-
-## 📸 Telas do Sistema
-
-| Tela | Descrição |
-|---|---|
-| Landing Page | Apresentação, estatísticas, escolha de perfil |
-| Login / Cadastro | Autenticação com seleção de tipo de usuário |
-| Dashboard Restaurante | Grid de influencers com busca e filtros sidebar |
-| Dashboard Influenciador | Catálogo de restaurantes |
-| Notificações | Acompanhamento de propostas e acordos |
-| Perfil | Edição de dados, histórico de parcerias |
-| Modais de Parceria | Formulários de proposta e resposta |
-
-## 👥 Equipe — Grupo 11
-
-Projeto Integrador — SENAC EAD TADS/TSI  
-Prof. Me. Anderson Clayton
-
----
-
-## 📌 Como disponibilizar no GitHub
+## Como executar
 
 ```bash
-# 1. Inicialize o repositório
-git init
-git add .
-git commit -m "feat: implementação inicial do GastroLink"
-
-# 2. Crie o repositório no GitHub (github.com/new)
-# Nome sugerido: gastrolink
-
-# 3. Conecte e envie
-git remote add origin https://github.com/SEU_USUARIO/gastrolink.git
-git branch -M main
-git push -u origin main
+npm install
+npm run dev
 ```
 
-Para deixar o site **online via GitHub Pages**:
-- Vá em `Settings > Pages`
-- Source: `Deploy from a branch → main → / (root)`
-- Aguarde ~1 minuto e acesse: `https://SEU_USUARIO.github.io/gastrolink`
+A aplicação sobe em `http://localhost:8080`. As fotos do mural são restauradas sozinhas a partir de `assets/` na primeira execução. Sem credenciais do Firebase, o **modo demonstração** grava tudo no `localStorage` do navegador, já com as três personas e um mural populado.
+
+Para voltar aos dados iniciais, use **Restaurar dados** no rodapé de qualquer painel.
+
+## Acesso rápido (1 clique)
+
+| Persona | Perfil | E-mail | Senha |
+| --- | --- | --- | --- |
+| Roberto Alvarez | Restaurante Sabor Caseiro | roberto@saborcaseiro.com | sabor123 |
+| Lucas Mendes (@gastrolucas, 4,8 mil) | Criador de conteúdo | lucas@gastrolucas.com | gastro123 |
+| Marina Costa | Curadoria | marina@gastrolink.com | curadoria123 |
+
+Chave para criar outra conta de curadoria: `GRUPO17`.
+
+## O que cada perfil faz
+
+- **Restaurante:** KPIs (ofertas ativas, cliques no WhatsApp, pausadas), CRUD completo, pausar/reativar e botão flutuante **+** para publicar em um modal curto.
+- **Criador:** feed em cards, busca, filtros de categoria, faixa de seguidores e favoritos, selo de compatibilidade, denúncia e **Tenho Interesse (WhatsApp)** com modal de handoff (prévia editável, copiar e abrir).
+- **Curadoria:** KPIs globais e fila para **Aprovar (Manter Ativa)** ou **Suspender Oferta**. Oferta suspensa some do feed na hora.
+
+## Arquitetura
+
+Clean Architecture no cliente, com o padrão Repository. A interface não conhece Firebase nem `localStorage`.
+
+```text
+src/
+├── config/firebaseConfig.ts          # chaves; vazio = modo demonstração
+├── domain/                           # tipos, seed, formatação
+├── repositories/
+│   ├── RepositoryInterface.ts        # contrato
+│   ├── LocalStorageRepository.ts     # fallback automático
+│   ├── FirebaseRepository.ts         # Auth + Firestore via REST
+│   └── RepositoryFactory.ts
+├── services/
+│   ├── AuthService.ts
+│   ├── OpportunityService.ts
+│   └── WhatsAppService.ts
+├── state/gastro-context.tsx          # sessão e ações
+└── components/gastrolink/            # landing, painéis e modais
+database/
+├── schema.sql                        # DER relacional (6 entidades)
+├── firestore.rules
+└── firestore-seed.json
+```
+
+Correspondência com o desenho acadêmico em JavaScript puro: a UI está em React + Tailwind (em vez de `renderers.js` + `index.html`), e as mesmas três camadas — apresentação, serviços e repositórios — continuam separadas.
+
+No Firestore os documentos de oferta guardam nome e telefone do restaurante junto da oferta, para o feed não precisar de junção. O `schema.sql` mantém o modelo normalizado.
+
+## Firebase (opcional)
+
+1. Crie um projeto com Authentication (e-mail/senha) e Cloud Firestore.
+2. Publique `database/firestore.rules`.
+3. Preencha `src/config/firebaseConfig.ts` (`apiKey` e `projectId` bastam para ligar o modo nuvem) ou defina `VITE_FIREBASE_API_KEY` e `VITE_FIREBASE_PROJECT_ID`.
+4. Com as chaves presentes, o acesso de 1 clique é desligado. Cadastre restaurante e criador pela tela de entrada. A primeira curadoria usa a chave `GRUPO17`.
+
+## Identidade
+
+Fundo papel `#FFFBF7`, laranja queimado `#EA580C`, vermelho `#DC2626` e verde `#16A34A` só na chamada do WhatsApp. Mobile first, rótulos visíveis, foco no teclado e confirmação antes de excluir.
