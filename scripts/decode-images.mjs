@@ -7,7 +7,7 @@ function readB64(relative) {
   const direct = join(root, relative);
   if (existsSync(direct)) return readFileSync(direct, "utf8");
   let joined = "";
-  for (const suffix of [".aa", ".ab", ".ac"]) {
+  for (const suffix of [".aa", ".ab", ".ac", ".ad", ".ae", ".af", ".ag", ".ah"]) {
     const part = direct + suffix;
     if (existsSync(part)) joined += readFileSync(part, "utf8");
   }
