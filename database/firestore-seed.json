@@ -1,0 +1,304 @@
+{
+  "version": 1,
+  "usuarios": [
+    {
+      "id": "usr_roberto",
+      "nomeCompleto": "Roberto Alvarez",
+      "email": "roberto@saborcaseiro.com",
+      "senhaHash": "091e777e9a0722ce725bbfa5aea90c66f2e6f8ead8c298db11797703f3d8a7e6",
+      "tipoPerfil": "RESTAURANTE",
+      "createdAt": "2026-11-01T12:00:00.000Z"
+    },
+    {
+      "id": "usr_lucas",
+      "nomeCompleto": "Lucas Mendes",
+      "email": "lucas@gastrolucas.com",
+      "senhaHash": "f6f0f12b644674fadebf698641579616dfc2eb8badf32f0b2eec044b2f1c9bcc",
+      "tipoPerfil": "INFLUENCIADOR",
+      "createdAt": "2026-11-02T12:00:00.000Z"
+    },
+    {
+      "id": "usr_marina",
+      "nomeCompleto": "Marina Costa",
+      "email": "marina@gastrolink.com",
+      "senhaHash": "c9f108f117ed422be9d0be10606bd64dea140da4a72e2a68f84d62d951ffa5bd",
+      "tipoPerfil": "ADMIN",
+      "createdAt": "2026-11-01T09:00:00.000Z"
+    },
+    {
+      "id": "usr_vila",
+      "nomeCompleto": "Camila Duarte",
+      "email": "camila@burgerdavila.com",
+      "senhaHash": "bc20afd3aacb95fd749e88e9cf882a38bdb45689242160324f7f60962557d0d7",
+      "tipoPerfil": "RESTAURANTE",
+      "createdAt": "2026-11-03T12:00:00.000Z"
+    },
+    {
+      "id": "usr_forno",
+      "nomeCompleto": "Paulo Ribeiro",
+      "email": "paulo@fornoebrasa.com",
+      "senhaHash": "c4aaa3e11754137141b2b2d6eb5c1ff7c18942606176a85310fa9f3dc642e323",
+      "tipoPerfil": "RESTAURANTE",
+      "createdAt": "2026-11-04T12:00:00.000Z"
+    },
+    {
+      "id": "usr_ladeira",
+      "nomeCompleto": "Helena Martins",
+      "email": "helena@cafeladeira.com",
+      "senhaHash": "d199568e2a8bec2ab13dc66a1f8c8b59dea100fd5689f76cf6a513737c1916a3",
+      "tipoPerfil": "RESTAURANTE",
+      "createdAt": "2026-11-05T12:00:00.000Z"
+    },
+    {
+      "id": "usr_nori",
+      "nomeCompleto": "Kenji Sato",
+      "email": "kenji@norihouse.com",
+      "senhaHash": "af187a24e145c74631f4929072c43940c0f92f409eb1dd9ec0743170b6cda34b",
+      "tipoPerfil": "RESTAURANTE",
+      "createdAt": "2026-11-06T12:00:00.000Z"
+    }
+  ],
+  "restaurantes": [
+    {
+      "id": "rest_roberto",
+      "usuarioId": "usr_roberto",
+      "nomeFantasia": "Restaurante Sabor Caseiro",
+      "documento": "12.345.678/0001-90",
+      "whatsapp": "5583999999999",
+      "culinaria": "Comida Caseira",
+      "bairro": "Centro - Campina Grande/PB"
+    },
+    {
+      "id": "rest_vila",
+      "usuarioId": "usr_vila",
+      "nomeFantasia": "Burger da Vila",
+      "documento": "23.456.789/0001-10",
+      "whatsapp": "5583988881111",
+      "culinaria": "Hamburgueria",
+      "bairro": "Catolé - Campina Grande/PB"
+    },
+    {
+      "id": "rest_forno",
+      "usuarioId": "usr_forno",
+      "nomeFantasia": "Forno & Brasa",
+      "documento": "34.567.890/0001-21",
+      "whatsapp": "5583988882222",
+      "culinaria": "Pizzaria",
+      "bairro": "Bodocongó - Campina Grande/PB"
+    },
+    {
+      "id": "rest_ladeira",
+      "usuarioId": "usr_ladeira",
+      "nomeFantasia": "Café Ladeira",
+      "documento": "45.678.901/0001-32",
+      "whatsapp": "5583988883333",
+      "culinaria": "Cafeteria",
+      "bairro": "Alto Branco - Campina Grande/PB"
+    },
+    {
+      "id": "rest_nori",
+      "usuarioId": "usr_nori",
+      "nomeFantasia": "Nori House",
+      "documento": "56.789.012/0001-43",
+      "whatsapp": "5583000000000",
+      "culinaria": "Japonês",
+      "bairro": "José Pinheiro - Campina Grande/PB"
+    }
+  ],
+  "influenciadores": [
+    {
+      "id": "inf_lucas",
+      "usuarioId": "usr_lucas",
+      "handle": "@gastrolucas",
+      "redeSocial": "Instagram",
+      "seguidores": 4800,
+      "nicho": "Reviews gastronômicos e roteiros locais",
+      "mediaKitUrl": "https://instagram.com/gastrolucas",
+      "favoriteOfferIds": [
+        "opp_003"
+      ]
+    }
+  ],
+  "ofertas": [
+    {
+      "id": "opp_001",
+      "restauranteId": "rest_roberto",
+      "restaurantName": "Restaurante Sabor Caseiro",
+      "whatsappNumber": "5583999999999",
+      "category": "Comida Caseira",
+      "neighborhood": "Centro - Campina Grande/PB",
+      "partnershipModel": "Permuta Simples",
+      "title": "Combo Almoço Regional para 2 Pessoas",
+      "whatWeOffer": "Almoço regional completo com entrada, prato principal, sobremesa e bebidas.",
+      "whatWeAsk": "1 vídeo no formato Reels + sequência de 3 Stories marcando o perfil.",
+      "minFollowers": 4000,
+      "tags": [
+        "#ComidaCaseira",
+        "#Permuta",
+        "#+4kSeguidores"
+      ],
+      "status": "active",
+      "whatsappClicks": 14,
+      "createdAt": "2026-11-20T14:30:00.000Z"
+    },
+    {
+      "id": "opp_002",
+      "restauranteId": "rest_roberto",
+      "restaurantName": "Restaurante Sabor Caseiro",
+      "whatsappNumber": "5583999999999",
+      "category": "Comida Caseira",
+      "neighborhood": "Centro - Campina Grande/PB",
+      "partnershipModel": "Permuta Simples",
+      "title": "Sobremesa da casa para uma sequência de Stories",
+      "whatWeOffer": "Doce de leite com queijo coalho e café coado para duas pessoas.",
+      "whatWeAsk": "3 Stories no mesmo dia, com marcação do restaurante.",
+      "minFollowers": 2000,
+      "tags": [
+        "#ComidaCaseira",
+        "#Permuta",
+        "#+2kSeguidores"
+      ],
+      "status": "paused",
+      "whatsappClicks": 3,
+      "createdAt": "2026-11-18T18:00:00.000Z"
+    },
+    {
+      "id": "opp_003",
+      "restauranteId": "rest_vila",
+      "restaurantName": "Burger da Vila",
+      "whatsappNumber": "5583988881111",
+      "category": "Hamburgueria",
+      "neighborhood": "Catolé - Campina Grande/PB",
+      "partnershipModel": "Permuta + Cachê",
+      "title": "Smash burger duplo e milk-shake",
+      "whatWeOffer": "Dois smash burgers, batata rústica e um milk-shake de 400 ml.",
+      "whatWeAsk": "1 Reels de até 30 segundos e menção nos comentários fixados.",
+      "minFollowers": 1000,
+      "tags": [
+        "#Hamburgueria",
+        "#Permuta",
+        "#Cachê",
+        "#+1kSeguidores"
+      ],
+      "status": "active",
+      "whatsappClicks": 8,
+      "createdAt": "2026-11-19T20:15:00.000Z"
+    },
+    {
+      "id": "opp_004",
+      "restauranteId": "rest_forno",
+      "restaurantName": "Forno & Brasa",
+      "whatsappNumber": "5583988882222",
+      "category": "Pizzaria",
+      "neighborhood": "Bodocongó - Campina Grande/PB",
+      "partnershipModel": "Evento",
+      "title": "Noite da pizza de fermentação lenta",
+      "whatWeOffer": "Mesa para dois na noite de inauguração do forno novo, com entrada.",
+      "whatWeAsk": "Cobertura do evento em 1 Reels e 5 Stories, com presença no horário marcado.",
+      "minFollowers": 8000,
+      "tags": [
+        "#Pizzaria",
+        "#Evento",
+        "#+8kSeguidores"
+      ],
+      "status": "active",
+      "whatsappClicks": 5,
+      "createdAt": "2026-11-17T21:00:00.000Z"
+    },
+    {
+      "id": "opp_005",
+      "restauranteId": "rest_ladeira",
+      "restaurantName": "Café Ladeira",
+      "whatsappNumber": "5583988883333",
+      "category": "Cafeteria",
+      "neighborhood": "Alto Branco - Campina Grande/PB",
+      "partnershipModel": "Permuta Simples",
+      "title": "Brunch de domingo na varanda",
+      "whatWeOffer": "Brunch para duas pessoas: pães, frutas, ovos e dois cafés.",
+      "whatWeAsk": "1 carrossel com 4 fotos e marcação do café.",
+      "minFollowers": 1500,
+      "tags": [
+        "#Cafeteria",
+        "#Permuta",
+        "#+1kSeguidores"
+      ],
+      "status": "paused",
+      "whatsappClicks": 2,
+      "createdAt": "2026-11-15T10:00:00.000Z"
+    },
+    {
+      "id": "opp_006",
+      "restauranteId": "rest_nori",
+      "restaurantName": "Nori House",
+      "whatsappNumber": "5583000000000",
+      "category": "Japonês",
+      "neighborhood": "José Pinheiro - Campina Grande/PB",
+      "partnershipModel": "Permuta + Cachê",
+      "title": "Combo omakase com cessão total de direitos",
+      "whatWeOffer": "Sequência de 8 peças e um chá. Cachê não especificado.",
+      "whatWeAsk": "Vídeo exclusivo, sem prazo de uso, com obrigação de impulsionamento pago pelo criador.",
+      "minFollowers": 50000,
+      "tags": [
+        "#Japonês",
+        "#Cachê",
+        "#+50kSeguidores"
+      ],
+      "status": "active",
+      "whatsappClicks": 1,
+      "createdAt": "2026-11-21T09:40:00.000Z"
+    },
+    {
+      "id": "opp_007",
+      "restauranteId": "rest_nori",
+      "restaurantName": "Nori House",
+      "whatsappNumber": "5583000000000",
+      "category": "Japonês",
+      "neighborhood": "José Pinheiro - Campina Grande/PB",
+      "partnershipModel": "Permuta Simples",
+      "title": "Combo misterioso sem descrição do prato",
+      "whatWeOffer": "Experiência a combinar no local.",
+      "whatWeAsk": "Publicação diária por 15 dias.",
+      "minFollowers": 10000,
+      "tags": [
+        "#Japonês",
+        "#Permuta",
+        "#+10kSeguidores"
+      ],
+      "status": "suspended",
+      "whatsappClicks": 0,
+      "createdAt": "2026-11-12T16:00:00.000Z"
+    }
+  ],
+  "interesses": [
+    {
+      "id": "int_001",
+      "ofertaId": "opp_001",
+      "influenciadorId": "inf_lucas",
+      "mensagem": "Olá, Restaurante Sabor Caseiro! Vim pelo mural do GastroLink. Tenho interesse na oferta \"Combo Almoço Regional para 2 Pessoas\". Meu perfil (@gastrolucas) atende aos requisitos exigidos (4000+ seguidores). Podemos agendar?",
+      "url": "https://wa.me/5583999999999",
+      "createdAt": "2026-11-20T18:12:00.000Z"
+    }
+  ],
+  "denuncias": [
+    {
+      "id": "den_001",
+      "ofertaId": "opp_006",
+      "reportanteId": "usr_lucas",
+      "adminRevisorId": null,
+      "motivo": "Requisitos abusivos para um restaurante local (50 mil seguidores) e o WhatsApp informado não completa uma chamada.",
+      "status": "PENDENTE",
+      "createdAt": "2026-11-21T11:05:00.000Z",
+      "decidedAt": null
+    },
+    {
+      "id": "den_002",
+      "ofertaId": "opp_007",
+      "reportanteId": "usr_lucas",
+      "adminRevisorId": "usr_marina",
+      "motivo": "Oferta sem descrição do que é entregue e com exigência de publicação diária.",
+      "status": "SUSPENSA",
+      "createdAt": "2026-11-13T11:20:00.000Z",
+      "decidedAt": "2026-11-13T15:45:00.000Z"
+    }
+  ]
+}
